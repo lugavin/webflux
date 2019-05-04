@@ -1,6 +1,7 @@
 package com.gavin.app.webflux.model;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -13,7 +14,8 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String uid;
+    @Id
+    private Long uid;
     @NotBlank
     @Size(min = 4, max = 50)
     private String login;
